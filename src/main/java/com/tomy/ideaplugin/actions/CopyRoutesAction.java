@@ -7,26 +7,32 @@ package com.tomy.ideaplugin.actions;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.editor.*;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.Messages;
+import com.tomy.ideaplugin.helper.ClipboardHelper;
+import com.tomy.ideaplugin.helper.NotifyHelper;
 
-import java.awt.datatransfer.StringSelection;
-import java.awt.Toolkit;
-import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.ArrayList;
 import java.util.List;
 public class CopyRoutesAction extends AnAction {
+
     @Override
     public void actionPerformed(AnActionEvent e) {
         final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
         final Project project = e.getRequiredData(CommonDataKeys.PROJECT);
         final String selectedText = editor.getSelectionModel().getSelectedText();
-
+        String title = "复制API路由信息<br>";
         if (selectedText != null) {
             String[] routes = parseRoutes(selectedText);
-            copyToClipboard(String.join("\n", routes));
-            Messages.showMessageDialog(project, "Routes copied to clipboard", "Information", Messages.getInformationIcon());
+            if (routes.length == 0) {
+                NotifyHelper.error(project, title + "没有匹配到内容");
+                return;
+            }
+            String content = String.join("\n", routes);
+            ClipboardHelper.copyToClipboard(content);
+            NotifyHelper.info(project, title + "已成功复制到剪切板:<br>" + content);
+        } else {
+            NotifyHelper.error(project, title + "没有匹配到内容");
         }
     }
 
@@ -54,10 +60,5 @@ public class CopyRoutesAction extends AnAction {
         }
 
         return routes.toArray(new String[0]);
-    }
-
-    private void copyToClipboard(String text) {
-        StringSelection selection = new StringSelection(text);
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
     }
 }
