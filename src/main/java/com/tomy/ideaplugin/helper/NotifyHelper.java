@@ -14,7 +14,7 @@ public class NotifyHelper {
                               String content, NotificationType notificationType) {
         NotificationGroupManager.getInstance()
                 // plugin.xml里配置的id
-                .getNotificationGroup("tomy asst")
+                .getNotificationGroup("office assistant")
                 .createNotification(content, notificationType)
                 .notify(project);
     }

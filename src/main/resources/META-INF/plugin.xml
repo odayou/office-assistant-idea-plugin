@@ -25,7 +25,7 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-            <notificationGroup id="tomy asst"
+            <notificationGroup id="office assistant"
                                displayType="BALLOON"
                                key="notification.group.name"/>
     </extensions>
