@@ -34,7 +34,13 @@
             <add-to-group anchor="first" group-id="EditorPopupMenu"></add-to-group>
             <add-to-group anchor="first" group-id="ProjectViewPopupMenu"></add-to-group>
         </group>
-        <action id="com.tomy.ideaplugin.actions.CopyRoutesAction" class="com.tomy.ideaplugin.actions.CopyRoutesAction" text="复制路由路径" description="文本des">
+        <action id="com.tomy.ideaplugin.actions.CopyRoutesAction" class="com.tomy.ideaplugin.actions.CopyRoutesAction" text="复制路由路径" description="文本">
+            <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
+        </action>
+        <action id="com.tomy.ideaplugin.actions.SplitWordsAction" class="com.tomy.ideaplugin.actions.SplitWordsAction" text="Split Words">
+            <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
+        </action>
+        <action id="com.tomy.ideaplugin.actions.SplitWordsActionReplace" class="com.tomy.ideaplugin.actions.SplitWordsActionReplace" text="Split Words(replace)">
             <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
         </action>
     </actions>
