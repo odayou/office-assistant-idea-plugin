@@ -37,10 +37,16 @@
         <action id="com.tomy.ideaplugin.actions.CopyRoutesAction" class="com.tomy.ideaplugin.actions.CopyRoutesAction" text="复制路由路径" description="文本">
             <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
         </action>
-        <action id="com.tomy.ideaplugin.actions.SplitWordsAction" class="com.tomy.ideaplugin.actions.SplitWordsAction" text="Split Words">
+        <action id="com.tomy.ideaplugin.actions.SplitWordsAction" class="com.tomy.ideaplugin.actions.SplitWordsAction" text="Split Words with dot">
             <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
         </action>
-        <action id="com.tomy.ideaplugin.actions.SplitWordsActionReplace" class="com.tomy.ideaplugin.actions.SplitWordsActionReplace" text="Split Words(replace)">
+        <action id="com.tomy.ideaplugin.actions.SplitWordsActionReplace" class="com.tomy.ideaplugin.actions.SplitWordsActionReplace" text="Split Words with dot(replace)">
+            <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
+        </action>
+        <action id="com.tomy.ideaplugin.actions.SplitWordsWithUnderLineAction" class="com.tomy.ideaplugin.actions.SplitWordsWithUnderLineAction" text="Split Words with underline">
+            <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
+        </action>
+        <action id="com.tomy.ideaplugin.actions.SplitWordsWithUnderLineAndRepalceAction" class="com.tomy.ideaplugin.actions.SplitWordsWithUnderLineAndRepalceAction" text="Split Words with underline (replace)">
             <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
         </action>
     </actions>
