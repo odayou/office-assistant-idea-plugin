@@ -49,7 +49,7 @@
         <action id="com.tomy.ideaplugin.actions.SplitWordsWithUnderLineAndReplaceAction" class="com.tomy.ideaplugin.actions.SplitWordsWithUnderLineAndReplaceAction" text="拆分为下划线连接 (并替换)">
             <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
         </action>
-        <action id="com.tomy.ideaplugin.actions.TransformToHumpAction" class="com.tomy.ideaplugin.actions.TransformToHumpAction" text="转为驼峰">
+        <action id="com.tomy.ideaplugin.actions.TransformToCamelCaseStringAction" class="com.tomy.ideaplugin.actions.TransformToCamelCaseStringAction" text="转为驼峰">
             <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
         </action>
     </actions>

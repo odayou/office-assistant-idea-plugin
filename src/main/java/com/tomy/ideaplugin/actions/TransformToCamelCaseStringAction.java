@@ -16,7 +16,7 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.tomy.ideaplugin.helper.TextHelper;
 
-public class TransformToHumpAction extends AnAction {
+public class TransformToCamelCaseStringAction extends AnAction {
     @Override
     public void actionPerformed(AnActionEvent e) {
         final Project project = e.getRequiredData(CommonDataKeys.PROJECT);
