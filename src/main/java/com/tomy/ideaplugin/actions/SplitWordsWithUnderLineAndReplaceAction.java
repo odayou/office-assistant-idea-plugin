@@ -16,7 +16,7 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.tomy.ideaplugin.helper.TextHelper;
 
-public class SplitWordsActionReplace extends AnAction {
+public class SplitWordsWithUnderLineAndReplaceAction extends AnAction {
     @Override
     public void actionPerformed(AnActionEvent e) {
         final Project project = e.getRequiredData(CommonDataKeys.PROJECT);
@@ -31,13 +31,14 @@ public class SplitWordsActionReplace extends AnAction {
             // 检查是否有选中的文本
             if (selectedText != null) {
                 // 拆分单词并使用点号拼接
-                String result = TextHelper.concatenateWordsWithDot(selectedText);
+                String result = TextHelper.concatenateWordsWithUnderline(selectedText);
                 // 获取文档
                 Document document = editor.getDocument();
 
                 // 获取选中文本的起始和结束位置
                 int startOffset = editor.getSelectionModel().getSelectionStart();
                 int endOffset = editor.getSelectionModel().getSelectionEnd();
+
                 // 使用 WriteCommandAction 执行文档修改操作
                 WriteCommandAction.runWriteCommandAction(project, () -> {
                     // 在这里执行您的文档修改操作
@@ -48,8 +49,5 @@ public class SplitWordsActionReplace extends AnAction {
                 });
             }
         });
-
-
-
     }
 }

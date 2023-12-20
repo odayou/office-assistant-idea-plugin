@@ -37,16 +37,19 @@
         <action id="com.tomy.ideaplugin.actions.CopyRoutesAction" class="com.tomy.ideaplugin.actions.CopyRoutesAction" text="复制路由路径" description="文本">
             <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
         </action>
-        <action id="com.tomy.ideaplugin.actions.SplitWordsAction" class="com.tomy.ideaplugin.actions.SplitWordsAction" text="Split Words with dot">
+        <action id="com.tomy.ideaplugin.actions.SplitWordsAction" class="com.tomy.ideaplugin.actions.SplitWordsAction" text="拆分为.连接">
             <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
         </action>
-        <action id="com.tomy.ideaplugin.actions.SplitWordsActionReplace" class="com.tomy.ideaplugin.actions.SplitWordsActionReplace" text="Split Words with dot(replace)">
+        <action id="com.tomy.ideaplugin.actions.SplitWordsActionReplace" class="com.tomy.ideaplugin.actions.SplitWordsActionReplace" text="拆分为.连接(并替换)">
             <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
         </action>
-        <action id="com.tomy.ideaplugin.actions.SplitWordsWithUnderLineAction" class="com.tomy.ideaplugin.actions.SplitWordsWithUnderLineAction" text="Split Words with underline">
+        <action id="com.tomy.ideaplugin.actions.SplitWordsWithUnderLineAction" class="com.tomy.ideaplugin.actions.SplitWordsWithUnderLineAction" text="拆分为下划线连接">
             <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
         </action>
-        <action id="com.tomy.ideaplugin.actions.SplitWordsWithUnderLineAndRepalceAction" class="com.tomy.ideaplugin.actions.SplitWordsWithUnderLineAndRepalceAction" text="Split Words with underline (replace)">
+        <action id="com.tomy.ideaplugin.actions.SplitWordsWithUnderLineAndReplaceAction" class="com.tomy.ideaplugin.actions.SplitWordsWithUnderLineAndReplaceAction" text="拆分为下划线连接 (并替换)">
+            <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
+        </action>
+        <action id="com.tomy.ideaplugin.actions.TransformToHumpAction" class="com.tomy.ideaplugin.actions.TransformToHumpAction" text="转为驼峰">
             <add-to-group group-id="IDEAPluginTools" anchor="first"></add-to-group>
         </action>
     </actions>

@@ -14,10 +14,9 @@ import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
-import com.tomy.ideaplugin.helper.ClipboardHelper;
-import com.tomy.ideaplugin.helper.NotifyHelper;
+import com.tomy.ideaplugin.helper.TextHelper;
 
-public class SplitWordsWithUnderLineAndRepalceAction extends AnAction {
+public class TransformToHumpAction extends AnAction {
     @Override
     public void actionPerformed(AnActionEvent e) {
         final Project project = e.getRequiredData(CommonDataKeys.PROJECT);
@@ -31,10 +30,7 @@ public class SplitWordsWithUnderLineAndRepalceAction extends AnAction {
 
             // 检查是否有选中的文本
             if (selectedText != null) {
-                // 拆分单词并使用点号拼接
-                String[] words = selectedText.split("(?=[A-Z])|(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])");
-                String result = String.join("_", words).toLowerCase();
-
+                String result = TextHelper.joinWordsFromDelimiter(TextHelper.joinWordsFromDelimiter(TextHelper.joinWordsFromDelimiter(selectedText, "."), "-"), "_");
                 // 获取文档
                 Document document = editor.getDocument();
 

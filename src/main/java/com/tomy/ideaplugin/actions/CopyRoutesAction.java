@@ -8,7 +8,7 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.editor.*;
 import com.intellij.openapi.project.Project;
 import com.tomy.ideaplugin.helper.ClipboardHelper;
-import com.tomy.ideaplugin.helper.NotifyHelper;
+import com.tomy.ideaplugin.helper.MessageHelper;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,14 +25,14 @@ public class CopyRoutesAction extends AnAction {
         if (selectedText != null) {
             String[] routes = parseRoutes(selectedText);
             if (routes.length == 0) {
-                NotifyHelper.error(project, title + "没有匹配到内容");
+                MessageHelper.showErrorNotify(project, title + "没有匹配到内容");
                 return;
             }
             String content = String.join("\n", routes);
             ClipboardHelper.copyToClipboard(content);
-            NotifyHelper.info(project, title + "已成功复制到剪切板:<br>" + content);
+            MessageHelper.showInfoNotify(project, title + "已成功复制到剪切板:<br>" + content);
         } else {
-            NotifyHelper.error(project, title + "没有匹配到内容");
+            MessageHelper.showErrorNotify(project, title + "没有匹配到内容");
         }
     }
 
