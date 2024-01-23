@@ -14,8 +14,16 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
+    a simple IntelliJ IDEA working plugin.<br>
+    <ul>
+        <li>copy route path</li>
+        <li>split words with underline or join words by underline (replace or just copy)</li>
+        <li>split words with point or join words by point (replace or just copy)</li>
+        <li>transform to camel case</li>
+    </ul>
+    <br>
+    <a href="https://github.com/odayou/office-assistant-idea-plugin">GitHub</a>
+    </ul>
   ]]></description>
 
     <!-- Product and plugin compatibility requirements.
