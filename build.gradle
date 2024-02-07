@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.tomy"
-version = "1.0-SNAPSHOT"
+version = "1.01-SNAPSHOT"
 
 repositories {
     maven { url 'https://maven.aliyun.com/repository/central/'}
@@ -16,6 +16,7 @@ repositories {
 }
 
 dependencies {
+    implementation     'com.alibaba:fastjson:1.2.62'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
     testRuntimeOnly    'org.junit.jupiter:junit-jupiter-engine:5.9.3'
     testRuntimeOnly    'org.junit.vintage:junit-vintage-engine:5.9.3'
@@ -23,7 +24,7 @@ dependencies {
 }
 
 intellij {
-    version = '2022.2'
+    version = '2023.3'
 }
 
 tasks.withType(JavaCompile) {
@@ -35,4 +36,9 @@ patchPluginXml {
     //注意这个版本号不能高于上面intellij的version,否则runIde会报错
     sinceBuild = '222'
     untilBuild = '233.*'
+}
+
+publishPlugin {
+    channels = ["Stable"]
+    token = "perm:b2RheW91.OTItOTU1MA==.C7c9V3aAjFabPsr86D236MSytMq4LO"
 }
