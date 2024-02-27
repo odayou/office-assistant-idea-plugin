@@ -16,7 +16,7 @@
     <description><![CDATA[
     a simple IntelliJ IDEA working plugin.<br>
     <ul>
-        <li>json格式化<br><i>把选中的json串压缩为无间距或格式化为友好格式</i></li>
+        <li>json formatting<br><i>Compresses the selected json string to no spacing or format it in a friendly format</i></li>
         <li>copy springboot controller route information</li>
         <li>split words with underline or join words by underline (replace or just copy)</li>
         <li>split words with point or join words by point (replace or just copy)</li>
