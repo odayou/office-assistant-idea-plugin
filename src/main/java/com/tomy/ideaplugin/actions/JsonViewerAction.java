@@ -3,6 +3,7 @@ package com.tomy.ideaplugin.actions;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -78,7 +79,7 @@ public class JsonViewerAction extends AnAction {
     private String formatJson(String json) {
         try {
             Object obj = JSON.parse(json);
-            return JSON.toJSONString(obj, true);
+            return JSON.toJSONString(obj, SerializerFeature.PrettyFormat, SerializerFeature.WriteMapNullValue);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -93,8 +94,8 @@ public class JsonViewerAction extends AnAction {
      */
     private boolean isFormattedJson(String json) {
         try {
-            Object obj = JSON.parse(json);
-            String formattedJson = JSON.toJSONString(obj, true);
+//            Object obj = JSON.parse(json);
+            String formattedJson = formatJson(json);
             return json.equals(formattedJson);
         } catch (Exception e) {
             // 解析异常，说明不是 JSON 格式

@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.tomy"
-version = "1.02-SNAPSHOT"
+version = "1.0.3"
 
 repositories {
     maven { url 'https://maven.aliyun.com/repository/central/'}
@@ -36,6 +36,13 @@ patchPluginXml {
     //注意这个版本号不能高于上面intellij的version,否则runIde会报错
     sinceBuild = '222'
     untilBuild = '233.*'
+//    changeNotes = "json viewer 功能优化: 保留null值. json viewer function optimization: Retain null values"
+    changeNotes = "<![CDATA[\n" +
+            "<h2>Bug Fixes</h2>\n" +
+            "<ul>\n" +
+            "  <li>json viewer 功能优化: 保留null值。json viewer function optimization: Retain null values.</li>\n" +
+            "</ul>\n" +
+            "]]>"
 }
 
 publishPlugin {
