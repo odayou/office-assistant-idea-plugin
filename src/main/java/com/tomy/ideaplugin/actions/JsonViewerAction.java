@@ -94,7 +94,6 @@ public class JsonViewerAction extends AnAction {
      */
     private boolean isFormattedJson(String json) {
         try {
-//            Object obj = JSON.parse(json);
             String formattedJson = formatJson(json);
             return json.equals(formattedJson);
         } catch (Exception e) {
@@ -113,7 +112,7 @@ public class JsonViewerAction extends AnAction {
             Object obj = JSON.parse(json);
             // 根据解析结果判断是对象还是数组
             if (obj instanceof JSONObject || obj instanceof JSONArray) {
-                return JSON.toJSONString(obj);
+                return JSON.toJSONString(obj, SerializerFeature.WriteMapNullValue);
             } else {
                 // 非对象和数组的情况，直接返回原文本
                 return json;
